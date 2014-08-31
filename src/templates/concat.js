@@ -6,4 +6,4 @@ for (var i in dirList) {
     if (dirList[i].indexOf('.html') > -1) total[dirList[i].slice(0, -5)] = fs.readFileSync(path.join(__dirname, dirList[i])).toString();
 }
 
-fs.writeFileSync(__dirname + "/bootstrap_components.json", JSON.stringify(total))
+fs.writeFileSync(__dirname + "/bootstrap_components.js", "var components = " + JSON.stringify(total) + ';')
