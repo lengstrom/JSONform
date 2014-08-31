@@ -1,4 +1,4 @@
-function JSONForm(input) {
+function JSONForm() {
     this.init = function(input, opts) {
         this.sourceObject = input;
         this.classes = opts.classes || {}; 
