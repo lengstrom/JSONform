@@ -3,7 +3,7 @@ function FormRow() {
         return false;
     };
     
-    this.filledTemplate (template, data) {
+    this.fillTemplate = function(template, data) {
         var filledTemplate = "";
         var prevIndex = 0;
         var index = template.indexOf("%");
