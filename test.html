@@ -9,7 +9,15 @@
 
 	<script>
 	window.onload = function() {
-
+		var form = document.getElementById("form");
+		var jsonForm = new JSONForm();
+		jsonForm.init({
+			{
+				"type": "input",
+				"id": "name",
+			},
+		});
+		form.appendChild(jsonForm.render());
 	}
 	</script>
 </head>
