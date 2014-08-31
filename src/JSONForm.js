@@ -5,6 +5,7 @@ function JSONForm() {
     
     this.render = function() {
         var mainNode = document.createElement('div');
+        debugger;
         for (var i = 0; i < this.sourceObject.length; i++) {
             mainNode.appendChild(this.processRow(this.sourceObject[i]));
         }
@@ -13,7 +14,9 @@ function JSONForm() {
     }
     
     this.processRow = function(rowSource) {
-        var compiled =  _.template(components[rowSource["type"]]);
-        return compiled(rowSource); 
+        var container = document.createElement('div');
+        var HTMLString =  (_.template(components[rowSource["type"]]))(rowSource);
+        container.innerHTML = HTMLString;
+        return container;
     }
 }
