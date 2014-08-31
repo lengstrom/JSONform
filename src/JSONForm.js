@@ -1,7 +1,6 @@
 function JSONForm() {
     this.init = function(input, opts) {
         this.sourceObject = input;
-        this.classes = opts.classes || {}; 
     }
     
     this.render = function() {
@@ -14,7 +13,7 @@ function JSONForm() {
     }
     
     this.processRow = function(rowSource) {
-        var compiled =  _.template(templates[rowSource["type"]]);
+        var compiled =  _.template(components[rowSource["type"]]);
         return compiled(rowSource); 
     }
 }

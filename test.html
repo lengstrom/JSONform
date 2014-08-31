@@ -4,19 +4,25 @@
 	<title>JSONForm.js Test</title>
 	<script src="src/vendor/underscore-min.js"></script>
 	<script src="src/FormRow.js"></script>
-	<script src="src/templates.js"></script>
+	<script src="src/templates/bootstrap_components.js"></script>
 	<script src="src/JSONForm.js"></script>
 
 	<script>
 	window.onload = function() {
 		var form = document.getElementById("form");
 		var jsonForm = new JSONForm();
-		jsonForm.init({
+		jsonForm.init([
 			{
-				"type": "input",
+				"type": "textinput",
 				"id": "name",
+				"label": "Enter name:",
+				"placeholder": "enter text",
+				"inputsize": 5,
+				"required": true,
+				"helptext": "",
+				
 			},
-		});
+		]);
 		form.appendChild(jsonForm.render());
 	}
 	</script>
