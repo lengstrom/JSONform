@@ -5,7 +5,6 @@ function JSONForm() {
     
     this.render = function() {
         var mainNode = document.createElement('div');
-        debugger;
         for (var i = 0; i < this.sourceObject.length; i++) {
             mainNode.appendChild(this.processRow(this.sourceObject[i]));
         }
@@ -21,14 +20,12 @@ function JSONForm() {
             "inputsize": "",
             "required": true,
             "helptext": "",
-
+            "buttontype": "",
+            "buttonlabel": "",
+            "prepend": "",
         };
-        
-        for(var key in defaults) {
-            if(typeof rowSource[key] == "undefined") {
-                rowSource[key] = defaults[key];
-            }
-        }
+
+        _.defaults(rowSource, defaults);
 
         var HTMLString =  (_.template(components[rowSource["type"]]))(rowSource);
         container.innerHTML = HTMLString;

@@ -19,6 +19,27 @@
 				"id": "name",
 				"label": "Enter name:",
 			},
+			{
+				"type": "prependedtext",
+				"id": "prepend",
+				"label": "stuff be prepended",
+				"prepend": "prepend this",
+
+			},
+			{
+				"type": "multipleradios",
+				"name": "radio",
+				"label": "Many radios",
+				"radios": 2,
+			},
+
+			{
+				"label": "click this -> ",
+				"type": "button",
+				"id": "submit",
+				"buttonlabel": "Submit",
+				"buttontype": "btn-danger",
+			},
 		]);
 		form.appendChild(jsonForm.render());
 	}
